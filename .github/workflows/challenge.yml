@@ -21,7 +21,7 @@ jobs:
         run: date
   run-on-ubuntu-third-time:
     name: Print Date in ubuntu-latest again
-    needs: [run-on-macos, run-on-ubuntu]
+    needs: [run-on-ubuntu, run-on-macos]
     runs-on: ubuntu-latest
     steps:
       - name: "1st checkout the branch"
