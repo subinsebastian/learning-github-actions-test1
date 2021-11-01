@@ -9,12 +9,12 @@ jobs:
     steps:
       - run: date
   run-on-macos:
-    name: Print Date in ubuntu-latest
+    name: Print Date in macos-latest
     runs-on: macos-latest
     steps:
       -  run: date
-  run-on-ubuntu-third-time:
-    name: Print Date in ubuntu-latest again
+  run-on-dependency-stage:
+    name: Print Date in Dependency stage
     needs: [run-on-ubuntu, run-on-macos]
     runs-on: ubuntu-latest
     steps:
