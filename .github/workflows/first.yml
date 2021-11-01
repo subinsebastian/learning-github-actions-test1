@@ -1,0 +1,21 @@
+name: first
+
+on: push
+
+jobs: 
+  job1:
+    name: Fist Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: "1st checkout the branch"
+        uses: actions/checkout@v2.3.5
+      - name: "2nd display environment variables"
+        run: env | sort        
+  job2:
+    name: Second job
+    runs-on: macos-latest
+    steps:
+      - name: "1st checkout the branch"
+        uses: actions/checkout@v2.3.5
+      - name: "2nd display environment variables"
+        run: env | sort
