@@ -1,0 +1,30 @@
+name: challenge
+
+on: [push, pull_request]
+
+jobs:
+  run-on-ubuntu:
+    name: Print Date in ubuntu-latest
+    runs-on: ubuntu-latest
+    steps:
+      - name: "1st checkout the branch"
+        uses: actions/checkout@v2.3.5
+      - name: "2nd display date"
+        run: date
+  run-on-macos:
+    name: Print Date in ubuntu-latest
+    runs-on: macos-latest
+    steps:
+      - name: "1st checkout the branch"
+        uses: actions/checkout@v2.3.5
+      - name: "2nd display date"
+        run: date
+  run-on-ubuntu-third-time:
+    name: Print Date in ubuntu-latest again
+    needs: [run-on-ubuntu, run-on-macos]
+    runs-on: ubuntu-latest
+    steps:
+      - name: "1st checkout the branch"
+        uses: actions/checkout@v2.3.5
+      - name: "2nd display date"
+        run: date
